@@ -1,0 +1,8 @@
+plugins {
+    id 'application'
+    id 'java-library'
+}
+
+dependencies {
+    implementation project(":library-service-api")
+}

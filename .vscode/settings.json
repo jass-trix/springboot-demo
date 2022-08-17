@@ -1,0 +1,8 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.sourcePaths": [
+        "library-book-api/src/main/java",
+        "library-book-impl/src/main/java"
+    ],
+    "java.dependency.syncWithFolderExplorer": true
+}

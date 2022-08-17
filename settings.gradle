@@ -1,0 +1,11 @@
+rootProject.name = 'springboot-demo'
+
+def includeSubdirectories() {
+    def currentDir = rootProject.projectDir;
+    currentDir.eachDirRecurse { subDir ->
+        if (!("$subDir").contains(".gradle") && file("$subDir/build.gradle").exists())
+            include "${subDir.path.substring(currentDir.path.length()).replace(File.separator, ":")}"
+    }
+}
+
+includeSubdirectories()

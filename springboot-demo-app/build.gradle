@@ -1,0 +1,28 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.2'
+    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+}
+
+application {
+    mainClass = 'com.example.springboot.SpringbootDemoApplication'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    implementation project(":library-book-api")
+    implementation project(":library-book-impl")
+    implementation project(":library-service-api")
+    implementation project(":library-service-impl")
+}
+
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+        exclude group: "org.sl4fj", module: "slf4j-log4j12"
+        exclude group: "org.sl4fj", module: "slf4j-simple"
+        exclude group: "org.slf4j.impl", module: "log4j-slf4j-impl"
+    }
+}
